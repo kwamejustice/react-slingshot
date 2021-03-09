@@ -42,14 +42,14 @@ jobs:
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
-  welcome:
+ welcome:
     # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
-      - build
-      - test:
-         requires:
-          - build
-      - audit: 
-         requires:
-          - test
+  jobs:
+   - welcome/run
+   - build
+   - test:
+      requires:
+       - build
+   - audit: 
+      requires:
+       - test
