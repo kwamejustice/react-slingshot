@@ -37,7 +37,10 @@ jobs:
       keys:
        - "npm-packages"
    - run: npm audit
-
+   - run:  
+      name: on error
+      command: npm audit fix
+      when: on_fail
 
 # Orchestrate or schedule a set of jobs
 workflows:
